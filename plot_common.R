@@ -28,5 +28,6 @@ setupPlot <- function(fname) {
     file.remove(fname)
   }
   png(filename = fname)
-  par(family="Arial Black")
+  par(family="Times")
+  par(lab=c(c(3,5,0)))
 }

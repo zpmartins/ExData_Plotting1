@@ -10,8 +10,6 @@ dt <- readFile()
 
 setupPlot("plot3.png")
 
-par(lab=c(c(1,1,0)))
-
 plot(dt$Sub_metering_1, 
      type="l",
      ylab = "Energy sub metering", 
@@ -30,11 +28,6 @@ axis(1,
      labels=c(weekdays(min(dt$Date), abbreviate = TRUE),
               weekdays(max(dt$Date)  , abbreviate = TRUE),
               weekdays(max(dt$Date+1), abbreviate = TRUE)))
-
-mGI <- max(dt$Sub_metering_1,dt$Sub_metering_2,dt$Sub_metering_3)
-axis(2, 
-     at=c(0, mGI/4, mGI/2, mGI/4*3), 
-     labels=seq(0,30,10))
 
 legend("topright",
        c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), 
